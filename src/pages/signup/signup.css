@@ -1,0 +1,114 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* L'image de fond est appliquée à body pour qu'elle couvre tout l'écran */
+.bodyy {
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(https://assets.nflxext.com/ffe/siteui/vlv3/85ff76db-39e5-423a-afbc-97d3e74db71b/null/ES-en-20240909-TRIFECTA-perspective_ee364273-e37f-4aed-a1b6-2c7b30791d2d_medium.jpg) center center / cover no-repeat;
+    height: 100vh; 
+    width: 100vw; 
+    height: 100vh; /* S'assure que l'image couvre toute la hauteur */
+    width: 100vw; /* S'assure que l'image couvre toute la largeur */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.form-box {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: auto; /* Centre horizontalement */
+    padding: 40px 30px;
+    width: 450px; /* Largeur par défaut pour les grands écrans */
+    position: absolute; /* Positionnement absolu */
+    top: 50%; /* Positionnement centré */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage du formulaire */
+}
+
+h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.form-control {
+    background: #333;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding: 16px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.btn-signup {
+    background: #e50914;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .form-box {
+        width: 90%;
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    .btn-signup {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .form-box {
+        width: 70%; /* Largeur réduite pour les tablettes */
+    }
+}
+
+@media (min-width: 1025px) {
+    .form-box {
+        width: 450px; /* Largeur par défaut pour les grands écrans */
+    }
+}

@@ -1,0 +1,130 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    background-color: #141414; /* Fond sombre */
+    color: #ffffff; /* Couleur du texte blanche */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Conteneur principal de la page */
+  .movie-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Conteneur de la section de contenu */
+  .content-container {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  /* Section de l'image */
+  .image-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-description {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(162, 4, 4, 0.813);
+    line-height: 1.6;
+  }
+  
+  /* Section de la vidéo */
+  .video-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 150px 0px;
+  }
+  
+  .title-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title-rating h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  
+  .title-rating .rating-badge {
+    background-color: #393535;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Vidéo */
+  .movie-video {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Effets de survol */
+  .movie-image:hover, .movie-video:hover {
+    transform: scale(1.02);
+  }
+  
+  .title-rating h1:hover, .title-rating .rating-badge:hover {
+    color: #f40612;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .content-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .video-section {
+      width: 100%;
+    }
+  
+    .title-rating {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .title-rating h1 {
+      font-size: 2rem;
+    }
+  
+    .title-rating .rating-badge {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  

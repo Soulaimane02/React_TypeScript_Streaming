@@ -1,0 +1,466 @@
+/* home.css */
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #141414;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+
+  }
+  
+  .header {
+	display: flex;
+	align-items: center;
+	padding: 10px 20px; 
+	background-color: rgba(20, 20, 20, 0.95); 
+	position: relative;
+	justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+	font-size: 1.8rem; /* Taille de police plus grande */
+	font-weight: bold;
+	color: #e50914; /* Couleur rouge Netflix */
+	cursor: pointer; /* Changer le curseur au survol */
+	transition: color 0.3s ease; /* Transition pour le changement de couleur */
+	text-align: left; /* Alignement à gauche du texte */
+	margin-right: 370px; /* Évite les problèmes d'espace à droite */
+}
+
+.logo:hover {
+	color: #0b2678; /* Couleur plus foncée au survol */
+}
+
+/* Styles de la barre de recherche */
+.search-bar {
+	padding: 10px 15px;
+	border-radius: 25px;
+	border: 1px solid #ccc;
+	outline: none;
+	width: 100%; /* Prend tout l'espace disponible sur mobile */
+	max-width: 250px; /* Limiter la taille sur écrans plus larges */
+	transition: border-color 0.3s;
+}
+
+.search-bar:focus {
+	border-color: #e50914; /* Couleur de bordure au focus */
+}
+
+/* search bar with result */
+
+.search-container {
+	position: relative;
+	margin-right: 25px; 
+  }
+  
+  .search-results {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	border-radius: 20px;
+	background-color: #030303;
+	border: 1px solid #3f3e3e;
+	max-height: 200px;
+	overflow-y: auto;
+	z-index: 1000;
+
+  }
+  
+  .search-result-item {
+	padding: 10px;
+	cursor: pointer;
+  }
+  
+  .search-result-item:hover {
+	background-color: #3f3e3e;
+  }
+  
+
+/* Styles de la barre de navigation */
+.navbar {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	justify-content: center; /* Centre la barre de navigation */
+	flex-grow: 1; /* Permet à la navbar de prendre tout l'espace restant */
+}
+
+/* Styles des liens de la navbar */
+.navbar a {
+	color: #ffffff; /* Couleur blanche pour le texte */
+	text-decoration: none;
+	font-size: 1rem;
+	padding: 10px 3px; /* Ajout de padding pour un meilleur espace */
+	border-radius: 5px; /* Coins arrondis */
+	background-color: rgba(255, 255, 255, 0.1); /* Fond léger pour le bouton */
+	transition: background-color 0.3s ease, transform 0.3s ease; /* Transitions douces */
+}
+
+.profile-picture {
+	width: 40px; /* Ajustez la taille selon vos besoins */
+	height: 40px; /* Ajustez la taille selon vos besoins */
+	border-radius: 50%; /* Pour faire un cercle */
+	margin-left: 5px; /* Espace entre le bouton et l'image */
+  }
+
+/* Effet de survol pour les liens */
+.navbar a:hover {
+	background-color: rgba(255, 255, 255, 0.2); /* Couleur de fond au survol */
+	transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+/* Styles pour le menu hamburger */
+.hamburger-menu {
+	display: none; /* Masquer par défaut */
+	flex-direction: column;
+	gap: 4px;
+	cursor: pointer;
+}
+
+.hamburger-menu .bar {
+	width: 25px;
+	height: 3px;
+	background-color: #ffffff; /* Couleur visible */
+	transition: all 0.3s ease;
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+	transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+	opacity: 0; /* Masquer la barre du milieu */
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+	transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Styles de la navbar quand elle est ouverte */
+.navbar.open {
+	flex-direction: column; /* Empilement vertical */
+	background: rgba(20, 20, 20, 0.9); /* Fond sombre */
+	position: absolute;
+	top: 60px; /* Ajustement de la position pour ne pas chevaucher le logo */
+	right: 0;
+	padding: 20px;
+	border-radius: 5px;
+	z-index: 1000;
+}
+
+/* Styles de la déconnexion */
+.btn-logout {
+	background-color: #e50914; /* Couleur rouge Netflix */
+	color: white; /* Texte blanc */
+	border: none;
+	border-radius: 5px;
+	padding: 10px 15px; /* Ajout de padding */
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-logout:hover {
+	background-color: #f40612; /* Couleur plus foncée au survol */
+	transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+/* Media Query pour les petits écrans */
+@media (max-width: 768px) {
+	.header {
+	  flex-direction: column; /* Empiler les éléments sur mobile */
+	  align-items: flex-start; /* Aligner à gauche pour les petits écrans */
+	}
+  
+	.search-bar {
+	  width: 90%; /* Prendre 90% de l'espace disponible sur mobile */
+	  margin: 10px 0; /* Ajouter de l'espace vertical */
+	}
+  
+	.navbar {
+	  display: none; /* Masquer par défaut sur mobile */
+	}
+  
+	.navbar.open {
+	  display: flex; /* Afficher la barre de navigation quand elle est ouverte */
+	}
+  
+	.hamburger-menu {
+	  display: flex; /* Afficher le menu hamburger sur mobile */
+	  margin-top: 10px; /* Espacement au-dessus du menu hamburger */
+	}
+}
+
+
+
+  /* Hero container */
+  
+.hero-container {
+  position: relative;
+  overflow: hidden;
+  width: 101%;
+  height: 500px; 
+}
+
+.hero-slide {
+	width: 100%;
+	height: 500px;
+	background-size: cover;
+	background-position: center;
+	transition: background-image 0.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  backdrop-filter: blur(8px); /* Flou d'arrière-plan */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  background-color: #e50914; /* Couleur rouge Netflix */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #f6121d; /* Couleur au survol */
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%; /* Boutons ronds */
+  transition: background-color 0.3s;
+  z-index: 2; /* Assure que les boutons soient au-dessus du slide */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Changement de couleur au survol */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+  
+  .section-title {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+  }
+  
+  .movie-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 20px;
+  }
+  
+  .movie-card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	cursor: pointer;
+  }
+  
+  .movie-card img {
+	width: 100%;
+	border-radius: 8px;
+	transition: transform 0.3s ease;
+  }
+  
+  .movie-card:hover img {
+	transform: scale(1.05);
+  }
+  
+  .movie-card-info {
+	position: absolute;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	padding: 10px;
+  }
+  
+  .progress-bar {
+	width: 100%;
+	height: 5px;
+	background: #ddd;
+	border-radius: 5px;
+	margin-top: 5px;
+  }
+  
+  .progress {
+	height: 100%;
+	background: #e50914;
+	border-radius: 5px;
+  }
+  
+  .play-button {
+	background: none;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1.5rem;
+  }
+  
+  .footer {
+	background: #141414;
+	color: rgba(255, 255, 255, 0.5);
+	text-align: center;
+	padding: 20px;
+  }
+
+  .movie-card {
+	position: relative;
+	width: 100%;
+	max-width: 300px;
+	margin: 10px;
+	overflow: hidden;
+  }
+  
+  .trailer-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none; /* Cacher par défaut */
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 5px;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out; /* Transition pour l'agrandissement */
+  }
+  
+  .movie-card:hover .trailer-container, /* Pour Desktop */
+  .movie-card:active .trailer-container, /* Pour mobile */
+  .movie-card:focus-within .trailer-container { /* Pour le focus sur mobile */
+	display: block;
+	width: 300%; /* Agrandissement à 300% */
+	height: 300%;
+	top: -100%; /* Centre verticalement */
+	left: -100%; /* Centre horizontalement */
+  }
+  
+  .trailer-container iframe {
+	width: 100%;
+	height: 100%;
+  }
+  
+  @media (max-width: 768px) {
+	/* Responsive pour les petits écrans */
+	.movie-card {
+	  max-width: 100%; /* S'adapte à la largeur de l'écran */
+	}
+	.trailer-container {
+	  width: 100%;
+	  height: 100%;
+	  top: 0;
+	  left: 0;
+	}
+  
+	.movie-card:hover .trailer-container,
+	.movie-card:active .trailer-container,
+	.movie-card:focus-within .trailer-container {
+	  width: 200%; /* 200% d'agrandissement sur mobile */
+	  height: 200%;
+	  top: -50%;
+	  left: -50%;
+	}
+  }
+  
+  
+  /* Media Queries */
+  
+  @media (max-width: 768px) {
+	.search-bar {
+	  width: 100%;
+	  margin: 10px 0;
+	}
+  
+	.navbar {
+	  display: none; /* Cacher la navbar par défaut sur mobile */
+	  flex-direction: column;
+	  gap: 10px;
+	}
+  
+	.navbar.open {
+	  display: flex; /* Afficher lorsque le menu hamburger est cliqué */
+	}
+  
+	.hamburger-menu {
+	  display: flex; /* Afficher le menu hamburger sur mobile */
+	}
+  
+	.hero-content {
+	  max-width: 90%; /* Réduire la largeur sur mobile */
+	}
+  
+	.section-title {
+	  font-size: 1.25rem; /* Taille de la police réduite */
+	}
+  
+	.movie-card img {
+	  border-radius: 5px; /* Réduction de l'arrondi sur mobile */
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.logo {
+	  font-size: 1.5rem; /* Réduire la taille du logo */
+	}
+  
+	.cta-button {
+	  padding: 8px 16px; /* Ajuster le rembourrage */
+	}
+  
+	.play-button {
+	  font-size: 1.25rem; /* Réduire la taille du bouton lecture */
+	}
+  }
+  
